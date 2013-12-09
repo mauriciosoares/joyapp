@@ -1,1 +1,11 @@
-<a ng-click="go('add-expense')">add expense</a>
+<nav>
+	<a href="">+</a>
+	<a href="">-</a>
+</nav>
+
+<ul>
+	<li ng-repeat="expense in expenses">
+		{{expense.name}}<br>
+		{{expense.cost}}
+	</li>
+</ul>
