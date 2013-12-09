@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Joy App</title>
+	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainCtrl">
-	{{teste}}
+	<div ng-view ng-class="slide"></div>
 
-
-	<script src="js/main.js"></script>
+	<script src="main.min.js"></script>
 </body>
 </html>

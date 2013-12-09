@@ -8,8 +8,11 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'app/js/main.js': [
+					'app/main.min.js': [
 						'app/bower_components/angular/angular.min.js',
+						'app/bower_components/angular-touch/angular-touch.min.js',
+						'app/bower_components/angular-route/angular-route.min.js',
+						'app/bower_components/angular-animate/angular-animate.min.js',
 						'app/js/app.js',
 						'app/js/*/*.js'
 					]
