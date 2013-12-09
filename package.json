@@ -1,0 +1,21 @@
+{
+  "name": "JoyApp",
+  "version": "0.0.1",
+  "description": "Organize suas contas mensais com este app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msodeveloper/joyapp.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "Mauricio Soares",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/msodeveloper/joyapp/issues"
+  }
+}
