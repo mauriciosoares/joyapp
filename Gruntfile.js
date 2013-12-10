@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'app/main.min.js': [
+					'app/app.min.js': [
 						'app/bower_components/angular/angular.min.js',
 						'app/bower_components/angular-touch/angular-touch.min.js',
 						'app/bower_components/angular-route/angular-route.min.js',
