@@ -1,0 +1,18 @@
+<a ng-click="back('down')">Voltar</a>
+
+<div class="values">
+	<div class="values-paid">
+		Pago:<br>
+		{{getValues('paid')|currency:'R$'}}
+	</div>
+
+	<div class="values-not-paid">
+		Pagar:<br>
+		{{getValues('not-paid')|currency:'R$'}}
+	</div>
+
+	<div class="values-total">
+		Total:<br>
+		{{getValues('total')|currency:'R$'}}
+	</div>
+</div>

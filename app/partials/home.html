@@ -1,6 +1,10 @@
+<div class="month">
+	{{month.month}}, {{month.year}}
+</div>
+
 <nav>
-	<a ng-click="go('add-expense')">+</a>
-	<a>-</a>
+	<a ng-click="go('add-expense', 'left')">+</a>
+	<a ng-click="go('month-values', 'up')">Gastos</a>
 </nav>
 
 <ul>
@@ -11,19 +15,7 @@
 	</li>
 </ul>
 
-<div class="values">
-	<div class="values-paid">
-		Pago:<br>
-		{{getValues('paid')|currency:'R$'}}
-	</div>
-
-	<div class="values-not-paid">
-		Pagar:<br>
-		{{getValues('not-paid')|currency:'R$'}}
-	</div>
-
-	<div class="values-total">
-		Total:<br>
-		{{getValues('total')|currency:'R$'}}
-	</div>
+<div>
+	<a ng-click="prevMonth()">Anterior mês</a>
+	<a ng-click="nextMonth()">Próximo mês</a>
 </div>
