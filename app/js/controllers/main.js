@@ -1,6 +1,7 @@
 app.controller('MainCtrl', ['$scope', '$rootScope', '$location', '$window', function($scope, $rootScope, $location, $window) {
-	$scope.teste = 'teasdf';
 	$scope.slide = '';
+
+
 
 	$rootScope.back = function() {
 		$scope.slide = 'slide-right';

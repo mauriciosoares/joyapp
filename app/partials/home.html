@@ -1,11 +1,29 @@
 <nav>
-	<a href="">+</a>
-	<a href="">-</a>
+	<a ng-click="go('add-expense')">+</a>
+	<a>-</a>
 </nav>
 
 <ul>
-	<li ng-repeat="expense in expenses">
+	<li ng-hide="expenses.length">No expenses</li>
+	<li ng-repeat="expense in expenses|orderBy:'name'">
 		{{expense.name}}<br>
-		{{expense.cost}}
+		{{expense.value}}<a ng-click="delete(expense)">deletar</a>
 	</li>
 </ul>
+
+<div class="values">
+	<div class="values-paid">
+		Pago:<br>
+		{{getValues('paid')|currency:'R$'}}
+	</div>
+
+	<div class="values-not-paid">
+		Pagar:<br>
+		{{getValues('not-paid')|currency:'R$'}}
+	</div>
+
+	<div class="values-total">
+		Total:<br>
+		{{getValues('total')|currency:'R$'}}
+	</div>
+</div>

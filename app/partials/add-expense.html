@@ -1,1 +1,8 @@
 <a ng-click="back()">voltar</a>
+
+<form ng-submit="save()">
+	<input type="text" ng-model="expense.name" />
+	<input type="number" ng-model="expense.value" />
+
+	<input type="submit" value="save">
+</form>
