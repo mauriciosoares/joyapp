@@ -11,16 +11,16 @@
 	<a class="month-next month-pn" ng-click="nextMonth()"></a>
 </div>
 
-<nav>
-	<a ng-click="go('month-values', 'up')">Gastos</a>
-</nav>
-
 <ul class="expenses">
-	<li ng-hide="expenses.length" class="expenses-item">No expenses</li>
+	<li ng-hide="expenses.length" class="expenses-item">
+		You have no expenses yet,<br>
+		Why don't you <a ng-click="go('add-expense', 'left')">add some?</a>
+	</li>
 
 	<li ng-repeat="expense in expenses|orderBy:'name'" class="expenses-item" ng-class="{'is-active': swipeActive, 'is-deleted': isDeleted}" ng-swipe-right="swipeActive = true" ng-swipe-left="swipeActive = false">
 		<div class="expenses-actions">
 			<a ng-click="isDeleted = true; delete(expense)" class="expenses-actions-delete"></a>
+			<a class="expenses-actions-edit"></a>
 			
 		</div>
 		{{expense.name}}<br>
@@ -28,3 +28,10 @@
 		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}" class="expenses-item-check"></a>
 	</li>
 </ul>
+
+<div class="paid">
+	<a class="paid-values" ng-click="go('month-values', 'up')">
+		<i class="paid-icon"></i><br>
+		Total Values
+	</a>
+</div>

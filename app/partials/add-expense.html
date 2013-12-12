@@ -6,8 +6,15 @@
 
 
 <form class="addexpense" ng-submit="save()">
-	<input type="text" ng-model="expense.name" />
-	<input type="number" ng-model="expense.value" />
+	<div class="row">
+		Add an expense
+	</div>
+	<div class="row">
+		<input class="addexpense-field" type="text" ng-model="expense.name" placeholder="Guitar Classes" />
+	</div>
+	<div class="row">
+		<input class="addexpense-field" type="number" ng-model="expense.value" placeholder="500,27" />
+	</div>
 
-	<input type="submit" value="save">
+	<input class="addexpense-submit" type="submit" value="Save">
 </form>
