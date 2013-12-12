@@ -1,4 +1,4 @@
-app.controller('HomeCtrl', ['$scope', 'localStorage', function($scope, localStorage) {
+app.controller('HomeCtrl', ['$scope', 'localStorage', '$timeout', function($scope, localStorage, $timeout) {
 	$scope.expenses = localStorage.get('expenses');
 
 	$scope.$watch('month', function(e) {
@@ -40,7 +40,9 @@ app.controller('HomeCtrl', ['$scope', 'localStorage', function($scope, localStor
 	};
 
 	$scope.delete = function(expense) {
-		$scope.expenses.splice($scope.expenses.indexOf(expense), 1);
-		localStorage.set('expenses', $scope.expenses);
+		$timeout(function() {
+			$scope.expenses.splice($scope.expenses.indexOf(expense), 1);
+			localStorage.set('expenses', $scope.expenses);
+		}, 250);
 	};
 }]);

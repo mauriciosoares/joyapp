@@ -18,10 +18,10 @@
 <ul class="expenses">
 	<li ng-hide="expenses.length" class="expenses-item">No expenses</li>
 
-	<li ng-repeat="expense in expenses|orderBy:'name'" class="expenses-item" ng-class="{'is-active': swipeActive}" ng-swipe-right="swipeActive = true" ng-swipe-left="swipeActive = false">
-		<a ng-click="swipeActive = !swipeActive">at</a>
+	<li ng-repeat="expense in expenses|orderBy:'name'" class="expenses-item" ng-class="{'is-active': swipeActive, 'is-deleted': isDeleted}" ng-swipe-right="swipeActive = true" ng-swipe-left="swipeActive = false">
 		<div class="expenses-actions">
-			<a ng-click="delete(expense)" class="expenses-actions-delete"></a>
+			<a ng-click="isDeleted = true; delete(expense)" class="expenses-actions-delete"></a>
+			
 		</div>
 		{{expense.name}}<br>
 		{{expense.value}}

@@ -157,23 +157,23 @@ a {
     margin-top: 110px;
     width: 100%;
     overflow: hidden;
+    padding-top: 1px;
 }
 
 .expenses-item {
     border-top: 1px solid #cad0d1;
+    border-bottom: 1px solid #cad0d1;
+    margin-top: -1px;
     background-color: white;
     position: relative;
     padding: 25px 0;
     padding-left: 150px;
     width: calc(100% - 28px);
-    margin-left: -122px;
+    -webkit-transform: translateX(-122px);
+    transform: translateX(-122px);
     -ms-transition: 0.25s ease-in-out;
     -webkit-transition: 0.25s ease-in-out;
     transition:  0.25s ease-in-out;
-}
-
-.expenses-item:last-child {
-    border-bottom: 1px solid #cad0d1;
 }
 
 .expenses-item-check {
@@ -237,7 +237,12 @@ a {
 }
 
 .expenses-item.is-active {
-    margin-left: 0;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.expenses-item.is-deleted {
+    opacity: 0;
 }
 
 
