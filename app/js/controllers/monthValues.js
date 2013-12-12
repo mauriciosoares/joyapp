@@ -1,21 +1,35 @@
-app.controller('MonthValuesCtrl', ['$scope', function ($scope) {
+app.controller('MonthValuesCtrl', ['$scope', 'localStorage', function ($scope, localStorage) {
+	var expenses = localStorage.get('expenses');
+	var paid = localStorage.get('paid');
+
 	$scope.getValues = function(value) {
 		var valueToReturn = 0;
-		return valueToReturn;
-		if($scope.expenses.length) {
+		if(expenses) {
 			switch(value) {
 				case 'paid':
-					angular.forEach($scope.expenses, function(e){
-						valueToReturn += e.value;
+					angular.forEach(expenses, function(e){
+						if(angular.isArray(paid[$scope.month.time])) {
+							if(paid[$scope.month.time].indexOf(e.id) >= 0) {
+								valueToReturn += e.value;
+							}
+						}
 					});
 					return valueToReturn;
+
 				case 'not-paid':
-					angular.forEach($scope.expenses, function(e){
-						valueToReturn += e.value;
+					angular.forEach(expenses, function(e){
+						if(angular.isArray(paid[$scope.month.time])) {
+							if(paid[$scope.month.time].indexOf(e.id) < 0) {
+								valueToReturn += e.value;
+							}
+						} else {
+							valueToReturn += e.value;
+						}
 					});
 					return valueToReturn;
+
 				case 'total':
-					angular.forEach($scope.expenses, function(e){
+					angular.forEach(expenses, function(e){
 						valueToReturn += e.value;
 					});
 					return valueToReturn;

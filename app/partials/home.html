@@ -1,5 +1,6 @@
 <div class="month">
-	{{month.month}}, {{month.year}}
+	{{month.month}}, {{month.year}}<br>
+	{{teste}}
 </div>
 
 <nav>
@@ -12,6 +13,7 @@
 	<li ng-repeat="expense in expenses|orderBy:'name'">
 		{{expense.name}}<br>
 		{{expense.value}}<a ng-click="delete(expense)">deletar</a>
+		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}">Check</a>
 	</li>
 </ul>
 

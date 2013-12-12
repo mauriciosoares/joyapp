@@ -1,3 +1,7 @@
+.is-active {
+    color: blue;
+}
+
 .slide-left.ng-enter,
 .slide-left.ng-leave,
 .slide-right.ng-enter,

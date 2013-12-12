@@ -1,29 +1,51 @@
-app.controller('MainCtrl', ['$scope', '$rootScope', '$location', '$window', function($scope, $rootScope, $location, $window) {
+app.controller('MainCtrl', ['$scope', '$rootScope', '$location', '$window', 'months', 'localStorage', function($scope, $rootScope, $location, $window, months, localStorage) {
 	$scope.slide = '';
 
-	var month = new Date();
+	// initial config for localstorage
+	if(!angular.isObject(localStorage.get('paid'))) {
+		localStorage.set('paid', {});
+	}
+	if(!angular.isObject(localStorage.get('expenses'))) {
+		localStorage.set('expenses', []);
+	}
 
-	$rootScope.getCurrentMonth = function() {
-		return month.getTime();
+	var monthHelper = new Date();
+	monthHelper = new Date(monthHelper.getFullYear(), monthHelper.getMonth());
+
+	$scope.month = {
+		month: months.name[monthHelper.getMonth()],
+		year: monthHelper.getFullYear(),
+		time: monthHelper.getTime()
 	};
 
 	$rootScope.nextMonth = function() {
-		if (month.getMonth() === 11) {
-			month = new Date(month.getFullYear() + 1, 0, 1);
+		if (monthHelper.getMonth() === 11) {
+			monthHelper = new Date(monthHelper.getFullYear() + 1, 0, 1);
 		} else {
-			month = new Date(month.getFullYear(), month.getMonth() + 1, 1);
+			monthHelper = new Date(monthHelper.getFullYear(), monthHelper.getMonth() + 1, 1);
 		}
-		return month.getTime();
+
+		$scope.month = {
+			month: months.name[monthHelper.getMonth()],
+			year: monthHelper.getFullYear(),
+			time: monthHelper.getTime()
+		};
 	};
 
 	$rootScope.prevMonth = function() {
-		if (month.getMonth() === 0) {
-			month = new Date(month.getFullYear() - 1, 11, 1);
+		if (monthHelper.getMonth() === 0) {
+			monthHelper = new Date(monthHelper.getFullYear() - 1, 11, 1);
 		} else {
-			month = new Date(month.getFullYear(), month.getMonth() - 1, 1);
+			monthHelper = new Date(monthHelper.getFullYear(), monthHelper.getMonth() - 1, 1);
 		}
-		return month.getTime();
+
+		$scope.month = {
+			month: months.name[monthHelper.getMonth()],
+			year: monthHelper.getFullYear(),
+			time: monthHelper.getTime()
+		};
 	};
+
 
 
 	$rootScope.back = function(direction) {

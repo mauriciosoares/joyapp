@@ -15,9 +15,10 @@ app.controller('AddExpenseCtrl', ['$scope', 'localStorage', function ($scope, lo
 		var expenses = localStorage.get('expenses');
 
 		if(!angular.isArray(expenses)) {
-			console.log('not');
 			expenses = [];
 		}
+
+		$scope.expense.id = new Date().getTime();
 
 		expenses.push($scope.expense);
 		localStorage.set('expenses', expenses);

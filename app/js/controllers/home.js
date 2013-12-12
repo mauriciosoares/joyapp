@@ -1,10 +1,42 @@
-app.controller('HomeCtrl', ['$scope', 'localStorage', 'months', function($scope, localStorage, months) {
+app.controller('HomeCtrl', ['$scope', 'localStorage', function($scope, localStorage) {
 	$scope.expenses = localStorage.get('expenses');
 
-	var month = new Date($scope.getCurrentMonth());
-	$scope.month = {
-		month: months.name[month.getMonth()],
-		year: month.getFullYear()
+	$scope.$watch('month', function(e) {
+		// console.log(e);
+	});
+
+	$scope.checked = function(id) {
+		var paid = localStorage.get('paid');
+
+		if (!paid) {
+			return false;
+		}
+
+		if(!angular.isArray(paid[$scope.month.time])) {
+			return false;
+		}
+
+		if(paid[$scope.month.time].indexOf(id) >= 0) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+	$scope.check = function(expense) {
+		var paid = localStorage.get('paid');
+
+		if(!angular.isArray(paid[$scope.month.time])) {
+			paid[$scope.month.time] = [];
+		}
+
+		if(paid[$scope.month.time].indexOf(expense.id) < 0) {
+			paid[$scope.month.time].push(expense.id);
+		} else {
+			paid[$scope.month.time].splice(paid[$scope.month.time].indexOf(expense.id), 1);
+		}
+
+		localStorage.set('paid', paid);
 	};
 
 	$scope.delete = function(expense) {
