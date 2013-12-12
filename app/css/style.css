@@ -302,8 +302,8 @@ a:active, input[type="submit"]:active {
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-    .paid-values {
-        background-image: url(../img/icon-values.png);
+    .paid-icon {
+        background-image: url(../img/icon-values@2x.png);
     }
 }
 
