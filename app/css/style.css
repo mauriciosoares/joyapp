@@ -21,6 +21,7 @@
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-user-select: none;
+    background-size: contain;
 }
 
 input {
@@ -45,26 +46,40 @@ body {
     background-color: #f6f7f7;
     border-bottom: 1px solid  #a4a8a9;
     width: 100%;
-    height: 96px;
+    height: 48px;
 }
 
 .header h1 {
     background-image: url(../img/joy.png);
-    width: 49px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     display: inline-block;
     position: absolute;
     left: 50%;
-    margin-left: -25px;
+    top: 10px;
+    margin: 0;
+    margin-left: -12.5px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .header h1 {
+        background-image: url(../img/joy@2x.png);
+    }
 }
 
 .header-add {
     background-image: url(../img/icon-add.png);
-    width: 35px;
-    height: 35px;
+    width: 18px;
+    height: 18px;
     float: right;
-    margin-top: 29px;
-    margin-right: 27px;
+    margin-top: 15px;
+    margin-right: 14px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .header-add {
+        background-image: url(../img/icon-add.png@2x);
+    }
 }
 
 /*month*/
@@ -77,32 +92,44 @@ body {
 }
 
 .month-pn {
-    width: 23px;
-    height: 41px;
-    margin: 24px 0;
+    width: 12px;
+    height: 21px;
+    margin: 12px 0;
 }
 
 .month-prev {
     background-image: url(../img/icon-prev.png);
     float: left;
-    margin-left: 54px;
+    margin-left: 27px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .month-prev {
+        background-image: url(../img/icon-prev@2x.png);
+    }
 }
 
 .month-next {
     background-image: url(../img/icon-next.png);
     float: right;
-    margin-right: 54px;
+    margin-right: 27px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .month-next {
+        background-image: url(../img/icon-next@2x.png);
+    }
 }
 
 .month-date {
-    font-size: 38px;
+    font-size: 19px;
     color: #777b7d;
-    margin-top: 22px;
+    margin-top: 11px;
     display: inline-block;
 }
 
 .month-year {
-    font-size: 34px;
+    font-size: 17px;
 }
 
 
