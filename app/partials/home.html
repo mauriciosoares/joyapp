@@ -1,10 +1,17 @@
+<div class="header">
+	<h1></h1>
+	<a class="header-add" ng-click="go('add-expense', 'left')"></a>
+</div>
+
 <div class="month">
-	{{month.month}}, {{month.year}}<br>
-	{{teste}}
+	<a class="month-prev month-pn" ng-click="prevMonth()"></a>
+	<span class="month-date">
+		{{month.month}}, <span class="month-year">{{month.year}}</span>
+	</span>
+	<a class="month-next month-pn" ng-click="nextMonth()"></a>
 </div>
 
 <nav>
-	<a ng-click="go('add-expense', 'left')">+</a>
 	<a ng-click="go('month-values', 'up')">Gastos</a>
 </nav>
 
@@ -16,8 +23,3 @@
 		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}">Check</a>
 	</li>
 </ul>
-
-<div>
-	<a ng-click="prevMonth()">Anterior mês</a>
-	<a ng-click="nextMonth()">Próximo mês</a>
-</div>
