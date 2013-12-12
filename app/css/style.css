@@ -259,7 +259,7 @@ a:active, input[type="submit"]:active {
 .addexpense .addexpense-submit {
     width: 100%;
     padding: 10px;
-    border: 1px solid #cad0d1;
+    border: none;
     border-radius: 5px;
     background-color: #1c9fe1;
     color: white;
