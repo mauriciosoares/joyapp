@@ -15,11 +15,16 @@
 	<a ng-click="go('month-values', 'up')">Gastos</a>
 </nav>
 
-<ul>
-	<li ng-hide="expenses.length">No expenses</li>
-	<li ng-repeat="expense in expenses|orderBy:'name'">
+<ul class="expenses">
+	<li ng-hide="expenses.length" class="expenses-item">No expenses</li>
+
+	<li ng-repeat="expense in expenses|orderBy:'name'" class="expenses-item" ng-class="{'is-active': swipeActive}" ng-swipe-right="swipeActive = true" ng-swipe-left="swipeActive = false">
+		<a ng-click="swipeActive = !swipeActive">at</a>
+		<div class="expenses-actions">
+			<a ng-click="delete(expense)" class="expenses-actions-delete"></a>
+		</div>
 		{{expense.name}}<br>
-		{{expense.value}}<a ng-click="delete(expense)">deletar</a>
-		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}">Check</a>
+		{{expense.value}}
+		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}" class="expenses-item-check"></a>
 	</li>
 </ul>

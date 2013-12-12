@@ -31,7 +31,11 @@ input {
 
 body {
     font-family: 'proximanova';
-    border-top: 20px solid black;
+    background-color: #ebf0f2;
+}
+
+a {
+    color: #1c9fe1;
 }
 
 /**
@@ -44,11 +48,13 @@ body {
 
 /*header*/
 .header {
-    position: relative;
+    position: fixed;
+    border-top: 20px solid black;
     background-color: #f6f7f7;
     border-bottom: 1px solid  #a4a8a9;
     width: 100%;
     height: 48px;
+    z-index: 2;
 }
 
 .header h1 {
@@ -84,6 +90,12 @@ body {
     }
 }
 
+.header-back {
+    float: left;
+    margin-top: 15px;
+    margin-left: 14px;
+}
+
 /*month*/
 .month {
     background-color: #f6f7f7;
@@ -91,6 +103,9 @@ body {
     width: 100%;
     text-align: center;
     overflow: hidden;
+    position: fixed;
+    top: 69px;
+    z-index: 2;
 }
 
 .month-pn {
@@ -134,11 +149,97 @@ body {
     font-size: 17px;
 }
 
+/*expenses*/
+.expenses {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 110px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.expenses-item {
+    border-top: 1px solid #cad0d1;
+    background-color: white;
+    position: relative;
+    padding: 25px 0;
+    padding-left: 150px;
+    width: calc(100% - 28px);
+    margin-left: -122px;
+    -ms-transition: 0.25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    transition:  0.25s ease-in-out;
+}
+
+.expenses-item:last-child {
+    border-bottom: 1px solid #cad0d1;
+}
+
+.expenses-item-check {
+    background-image: url(../img/icon-check.png);
+    width: 34px;
+    height: 33px;
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    right: 26px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .expenses-item-check {
+        background-image: url(../img/icon-check@2x.png);
+    }
+}
+
+.expenses-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 127px;
+    height: 100%;
+    background-color: #16b388;
+}
+
+.expenses-actions-delete {
+    background-image: url(../img/icon-delete.png);
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .expenses-actions-delete {
+        background-image: url(../img/icon-delete@2x.png);
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/*addexpense*/
+.addexpense {
+    padding-top: 90px;
+}
+
 
 /* State */
-.is-active {
-    color: blue;
+.expenses-item-check.is-active {
+    background-image: url(../img/icon-check-active.png);
 }
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .expenses-item-check.is-active {
+        background-image: url(../img/icon-check-active@2x.png);
+    }
+}
+
+.expenses-item.is-active {
+    margin-left: 0;
+}
+
 
 .slide-left.ng-enter,
 .slide-left.ng-leave,
@@ -150,7 +251,6 @@ body {
 .slide-down.ng-leave {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: white;
     -ms-transition: .25s ease-in-out;
     -webkit-transition: .25s ease-in-out;
     transition:  .25s ease-in-out;
