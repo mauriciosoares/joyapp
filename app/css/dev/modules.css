@@ -1,53 +1,4 @@
 /**
-* Some Configs
-**/
-@font-face {
-    font-family: 'proximanova';
-    src: url('fonts/proximanova-regular-webfont.eot');
-    src: url('fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/proximanova-regular-webfont.woff') format('woff'),
-         url('fonts/proximanova-regular-webfont.ttf') format('truetype'),
-         url('fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/**
-* Base Layout
-**/
-* {
-    -webkit-touch-callout: none;
-    -webkit-text-size-adjust: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-user-select: none;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-}
-
-input {
-    -webkit-user-select: auto !important;
-}
-
-body, html {
-    font-family: 'proximanova';
-    background-color: #ebf0f2;
-}
-
-a {
-    color: #1c9fe1;
-}
-
-a:active, input[type="submit"]:active {
-    opacity: 0.5;
-    outline:none;
-}
-
-/**
-* Templates
-**/
-
-/**
 * Modules
 **/
 
@@ -160,7 +111,8 @@ a:active, input[type="submit"]:active {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: 110px;
+    margin-top: 130px;
+    padding-bottom: 67px;
     width: 100%;
     overflow: hidden;
     padding-top: 1px;
@@ -180,6 +132,16 @@ a:active, input[type="submit"]:active {
     -ms-transition: 0.25s ease-in-out;
     -webkit-transition: 0.25s ease-in-out;
     transition:  0.25s ease-in-out;
+}
+
+.expenses-name {
+    font-size: 21px;
+    color: #546067;
+}
+
+.expenses-value {
+    font-size: 14px;
+    color: #a8b3b9;
 }
 
 .expenses-item-check {
@@ -305,114 +267,4 @@ a:active, input[type="submit"]:active {
     .paid-icon {
         background-image: url(../img/icon-values@2x.png);
     }
-}
-
-
-
-/* State */
-.expenses-item-check.is-active {
-    background-image: url(../img/icon-check-active.png);
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-    .expenses-item-check.is-active {
-        background-image: url(../img/icon-check-active@2x.png);
-    }
-}
-
-.expenses-item.is-active {
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-}
-
-.expenses-item.is-deleted {
-    opacity: 0;
-}
-
-
-.slide-left.ng-enter,
-.slide-left.ng-leave,
-.slide-right.ng-enter,
-.slide-right.ng-leave,
-.slide-up.ng-enter,
-.slide-up.ng-leave,
-.slide-down.ng-enter,
-.slide-down.ng-leave {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    -ms-transition: .25s ease-in-out;
-    -webkit-transition: .25s ease-in-out;
-    transition:  .25s ease-in-out;
-}
-
-
-.slide-left.ng-enter {
-    z-index: 101;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-}
-
-.slide-left.ng-enter.ng-enter-active {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.slide-left.ng-leave {
-    z-index: 100;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.slide-left.ng-leave.ng-leave-active {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-}
-
-.slide-right.ng-enter {
-    z-index: 100;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-}
-
-.slide-right.ng-enter.ng-enter-active {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.slide-right.ng-leave {
-    z-index: 101;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.slide-right.ng-leave.ng-leave-active {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-}
-
-.slide-up.ng-enter {
-    z-index: 101;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-}
-
-.slide-up.ng-enter.ng-enter-active {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
-
-.slide-down.ng-enter.ng-enter-active {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
-
-.slide-down.ng-leave {
-    z-index: 101;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
-
-.slide-down.ng-leave.ng-leave-active {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
 }

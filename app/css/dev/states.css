@@ -1,0 +1,15 @@
+/* State */
+.expenses-item-check.is-active {
+    background-image: url(../img/icon-check-active.png);
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    .expenses-item-check.is-active {
+        background-image: url(../img/icon-check-active@2x.png);
+    }
+}
+
+.expenses-item.is-active {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}

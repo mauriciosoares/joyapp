@@ -1,0 +1,29 @@
+/**
+* Base Layout
+**/
+* {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+input {
+    -webkit-user-select: auto !important;
+}
+
+body, html {
+    font-family: 'proximanova';
+    background-color: #ebf0f2;
+}
+
+a {
+    color: #1c9fe1;
+}
+
+a:active, input[type="submit"]:active {
+    opacity: 0.5;
+    outline:none;
+}

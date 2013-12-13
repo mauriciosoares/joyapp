@@ -19,12 +19,16 @@
 
 	<li ng-repeat="expense in expenses|orderBy:'name'" class="expenses-item" ng-class="{'is-active': swipeActive, 'is-deleted': isDeleted}" ng-swipe-right="swipeActive = true" ng-swipe-left="swipeActive = false">
 		<div class="expenses-actions">
-			<a ng-click="isDeleted = true; delete(expense)" class="expenses-actions-delete"></a>
-			<a class="expenses-actions-edit"></a>
-			
+			<a ng-click="delete(expense)" class="expenses-actions-delete"></a>
+			<a class="expenses-actions-edit" ng-click="go('add-expense/{{expense.id}}', 'left')"></a>
+
 		</div>
-		{{expense.name}}<br>
-		{{expense.value}}
+		<div class="expenses-name">
+			{{expense.name}}
+		</div>
+		<div class="expenses-value">
+			{{expense.value|currency:"R$"}}
+		</div>
 		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}" class="expenses-item-check"></a>
 	</li>
 </ul>

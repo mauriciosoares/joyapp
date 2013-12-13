@@ -40,9 +40,7 @@ app.controller('HomeCtrl', ['$scope', 'localStorage', '$timeout', function($scop
 	};
 
 	$scope.delete = function(expense) {
-		$timeout(function() {
-			$scope.expenses.splice($scope.expenses.indexOf(expense), 1);
-			localStorage.set('expenses', $scope.expenses);
-		}, 250);
+		$scope.expenses.splice($scope.expenses.indexOf(expense), 1);
+		localStorage.set('expenses', $scope.expenses);
 	};
 }]);
