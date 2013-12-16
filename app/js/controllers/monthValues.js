@@ -30,7 +30,7 @@ app.controller('MonthValuesCtrl', ['$scope', 'localStorage', function ($scope, l
 
 				case 'total':
 					angular.forEach(expenses, function(e){
-						valueToReturn += e.value;
+						valueToReturn += parseInt(e.value);
 					});
 					return valueToReturn;
 			}
