@@ -21,12 +21,14 @@ app.controller('AddExpenseCtrl', ['$scope', 'localStorage', '$routeParams', func
 
 	$scope.save = function() {
 		if(!$scope.expense.name || !$scope.expense.value) {
-			alert('Preencha os 2 campos');
+			alert('Fill both fields');
 			return;
 		}
 
-		if(!angular.isNumber($scope.expense.value)) {
-			alert('Coloque somente números');
+		$scope.expense.value = $scope.expense.value.replace(',', '.');
+
+		if(isNaN($scope.expense.value)) {
+			alert('Only numbers (use dots instead of commas)');
 			return;
 		}
 

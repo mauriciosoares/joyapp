@@ -27,7 +27,7 @@
 			{{expense.name}}
 		</div>
 		<div class="expenses-value">
-			{{expense.value|currency:"R$"}}
+			{{expense.value|currency}}
 		</div>
 		<a ng-click="check(expense)" ng-class="{'is-active': checked(expense.id)}" class="expenses-item-check"></a>
 	</li>

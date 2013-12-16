@@ -3,19 +3,30 @@
 	<a class="header-back" ng-click="back('right')">Back</a>
 </div>
 
-<div class="values">
-	<div class="values-paid">
-		Pago:<br>
-		{{getValues('paid')|currency:'R$'}}
-	</div>
-
-	<div class="values-not-paid">
-		Pagar:<br>
-		{{getValues('not-paid')|currency:'R$'}}
-	</div>
-
-	<div class="values-total">
-		Total:<br>
-		{{getValues('total')|currency:'R$'}}
-	</div>
+<div class="month">
+	<span class="month-date">
+		{{month.month}}, <span class="month-year">{{month.year}}</span>
+	</span>
 </div>
+
+
+<ul class="expenses">
+	<li class="expenses-item">
+		<span class="expenses-value">Paid:</span><br>
+		<span class="expenses-name expenses-paid">
+			{{getValues('paid')|currency}}
+		</span>
+	</li>
+	<li class="expenses-item">
+		<span class="expenses-value">To Pay:</span><br>
+		<span class="expenses-name expenses-topay">
+			{{getValues('not-paid')|currency}}
+		</span>
+	</li>
+	<li class="expenses-item">
+		<span class="expenses-value">Total Values:</span><br>
+		<span class="expenses-name">
+			{{getValues('total')|currency}}
+		</span>
+	</li>
+</ul>

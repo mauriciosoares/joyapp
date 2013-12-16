@@ -5,7 +5,6 @@
 /*header*/
 .header {
     position: fixed;
-    border-top: 20px solid black;
     background-color: #f6f7f7;
     border-bottom: 1px solid  #a4a8a9;
     width: 100%;
@@ -61,7 +60,7 @@
     text-align: center;
     overflow: hidden;
     position: fixed;
-    top: 69px;
+    top: 49px;
     z-index: 2;
 }
 
@@ -99,6 +98,7 @@
     font-size: 19px;
     color: #777b7d;
     margin-top: 11px;
+    margin-bottom: 11px;
     display: inline-block;
 }
 
@@ -111,8 +111,8 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: 130px;
-    padding-bottom: 67px;
+    margin-top: 110px;
+    padding-bottom: 63px;
     width: 100%;
     overflow: hidden;
     padding-top: 1px;
@@ -137,6 +137,14 @@
 .expenses-name {
     font-size: 21px;
     color: #546067;
+}
+
+.expenses-paid {
+    color: #16b388;
+}
+
+.expenses-topay {
+    color: #E46666;
 }
 
 .expenses-value {
