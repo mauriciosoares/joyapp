@@ -10,7 +10,7 @@ app.controller('MonthValuesCtrl', ['$scope', 'localStorage', function ($scope, l
 					angular.forEach(expenses, function(e){
 						if(angular.isArray(paid[$scope.month.time])) {
 							if(paid[$scope.month.time].indexOf(e.id) >= 0) {
-								valueToReturn += e.value;
+								valueToReturn += parseInt(e.value);
 							}
 						}
 					});
@@ -20,10 +20,10 @@ app.controller('MonthValuesCtrl', ['$scope', 'localStorage', function ($scope, l
 					angular.forEach(expenses, function(e){
 						if(angular.isArray(paid[$scope.month.time])) {
 							if(paid[$scope.month.time].indexOf(e.id) < 0) {
-								valueToReturn += e.value;
+								valueToReturn += parseInt(e.value);
 							}
 						} else {
-							valueToReturn += e.value;
+							valueToReturn += parseInt(e.value);
 						}
 					});
 					return valueToReturn;
